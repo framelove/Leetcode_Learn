@@ -9,6 +9,7 @@ class Solution(object):
         """
         :type x: int
         :rtype: bool
+        
         """
         if x < 0:
             return 'false'
