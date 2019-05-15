@@ -15,15 +15,17 @@ def get_imgs():
     friends = itchat.get_friends(update=True)
     for i in friends:
         img = itchat.get_head_img(userName=i["UserName"])
-        file_image = open(path + "/" + str(num) + ".png", 'wb')
+        file_image = open(path + "/" + str(num) + ".jpg", 'wb')
         file_image.write(img)
         file_image.close()
         num += 1
 
+get_imgs()
+itchat.logout()
 ls = os.listdir(path)
 
-
-image = Image.new('RGBA', (160*12, 160*12))   # 创建640*640px的大图
+xx = int(math.sqrt(len(ls)))
+image = Image.new('RGBA', (160*xx, 160*xx))   # 创建640*640px的大图
 x = 0
 y = 0
 
@@ -41,4 +43,3 @@ for i in ls:
               y += 1
 
 image.save(path + "/好友头像拼接图.png")
-
