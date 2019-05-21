@@ -34,4 +34,4 @@ class Solution(object):
 
 
 a = Solution()
-print(a.letterCombinations('34'))
+print(a.letterCombinations('368'))
